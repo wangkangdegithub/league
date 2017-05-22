@@ -22,37 +22,33 @@ body{
     float:left;
     width:48%;
     height:700px;
-    border-style:dashed;
+
 }
 .search1{
     margin: 20px;
 	float:left;
-    border-style:dashed;
 }
 
 .submit{
     width:100px;
     height:80px;
-    border:0;
     margin: 10px;
 }
 
 .header{
     text-align: left;
     margin-top: 5px;
-    border-style:dashed;
 }
 
 .search{
     text-align: center;
     margin-top: 20px;
-    border-style:dashed;
+
 }
 
 .prediction{
     text-align: center;
     margin-top: 20px;
-    border-style: dashed;
     font-size: larger;
     color: white;
 }
@@ -60,14 +56,12 @@ body{
 .article{
     text-align: center;
     margin-top: 20px;
-    border-style: dashed;
     color: white;
 }
 
 .item{
     text-align: center;
     margin-top: 20px;
-    border-style:dashed;
     color: white;
 }
 
@@ -75,7 +69,6 @@ body{
 .search2{
      margin: 20px;
 	 float:left;
-    border-style:dashed;
 }
 
 #column2

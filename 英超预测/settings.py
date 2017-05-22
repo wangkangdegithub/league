@@ -25,7 +25,7 @@ SECRET_KEY = '_7jre3es!=_9_%_=+!0%mbl-(ym^z6)o@&sk)!bgvt+jn4c0t('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','.wangkang.link']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost ', '.wangkang.link']
 
 
 # Application definition
@@ -75,24 +75,12 @@ WSGI_APPLICATION = '英超预测.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-'''
-原代码
+
+#原代码
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-'''
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'英超',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
     }
 }
 

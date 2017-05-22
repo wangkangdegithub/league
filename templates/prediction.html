@@ -16,9 +16,10 @@
 <div id=total>
 	<div id=column1>
             <div class="header">
-                 <img src="{% static 'images/003.png' %}">
+                 <img src="{% static 'images/uu_.png' %}">
             </div>
-            <div class="search">
+    <hr style="border-top:0.5px solid white"/>
+            <div class="search"style="height: 25%">
                     <form action="{% url 'premier:prediction' %}" method="post">
                         {% csrf_token %}
                         <div class="search1">
@@ -39,13 +40,17 @@
                     <!--      原代码    <input style="width:300px; height:30px;" placeholder="请输入支持球队..." autocomplete="off"/>
                     <input type="button" value="点击预测" style="width:80px;height:35px"/>           -->
             </div>
-            <div class="prediction" >
+            <hr style="border-top:0.5px solid white"/>
+    <br>
+
+            <div class="prediction" style="height: 15%">
                 <h3>
                     {{ home }}
                     {{ result }}
                     {{ away }}
                 </h3>
             </div>
+    <hr style="border-top:0.5px solid white"/>
             <div class="article">
                 <ul>
                 <h1> <a href="{% url 'premier:edit_page' %}">新文章</a></h1>
@@ -56,6 +61,8 @@
 
                 </ul>
             </div>
+    <br>
+    <br>
             <div class="item">
                 <ul >
                     <li><a href="#">赛事集锦</a></li>
