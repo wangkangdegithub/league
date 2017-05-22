@@ -1,0 +1,117 @@
+body{
+    padding: 0 0 0 0;
+    background-color: #ffffff;
+    background-image: url(../images/white.jpg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size:cover ;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.menu-bar{
+    text-align: center;
+}
+
+#paobu
+{
+    padding: 10px 5px;
+	height:450px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url(../images/paobu_.jpg);
+    width:100%;
+    position:relative;
+
+}
+.button
+{
+    width:210px;
+    height:60px;
+    color:#fff; display:block;
+    background-image: url(../images/button.png);
+    background-size: 100% auto;
+    position:absolute;
+    left:600px;
+    top:400px;
+}
+
+
+
+#page
+{
+    padding: 10px 5px;
+	height:250px;
+}
+#search
+{
+	margin: 5px 20px;
+	height :250px;
+	width:30%;
+	float:left;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url(../images/aaa_.jpg);
+}
+
+#search1
+{
+	margin: 5px 20px;
+	height :250px;
+	width:30%;
+	float:left;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url(../images/ggg_.jpg);
+}
+#search2
+{
+	margin: 5px 20px;
+	height :250px;
+	width:30%;
+	float:left;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url(../images/rrr_.jpg);
+}
+
+
+.header a {
+    color: black;
+}
+
+.header img{
+    display: block;
+    margin:0 auto 0 auto;
+    width: 400px;
+    height: 165px;
+}
+.header ul{
+    text-align: center;
+}
+.item {
+    margin: 0 auto;
+    text-align: center;
+    width: 400px;
+    height: 30px;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    float:left;
+    width: 100px;
+}
+.footer {
+    margin-top: 450px;
+}
+.footer p {
+    color: black;
+    text-align:center;
+    font-weight: bold;
+    font-size: 12px;
+    font-style: italic;
+    text-transform: uppercase;
+}
+.article{
+    text-align: center;
+}

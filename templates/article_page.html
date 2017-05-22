@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/article_page.css' %}">
+    <title>文章页</title>
+</head>
+<body>
+<h2>{{ article.title }}</h2>
+<br>
+<h3>{{ article.content }}</h3>
+<br><br>
+<a href="#">修改文章</a>
+</body>
+</html>

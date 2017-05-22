@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预测结果</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/prediction.css' %}">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts-more.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/3.5.4/echarts.js"></script>
+
+
+</head>
+<body>
+<div id=total>
+	<div id=column1>
+            <div class="header">
+                 <img src="{% static 'images/003.png' %}">
+            </div>
+            <div class="search">
+                    <form action="{% url 'premier:prediction' %}" method="post">
+                        {% csrf_token %}
+                        <div class="search1">
+                        <label>预测球队
+                            <input type="text" style="width:150px; height:30px;" name="home" placeholder="请输入支持球队..."/>
+                        </label>
+                        </div>
+                        <div class="search2">
+                        <label>对阵球队
+                            <input type="text" style="width:150px; height:30px;" name="away" placeholder="请输入对阵球队..."/>
+                        </label>
+                        </div>
+                        <br>
+                        <div class="submit">
+                        <input type="submit" value="点击预测"/>
+                        </div>
+                    </form>
+                    <!--      原代码    <input style="width:300px; height:30px;" placeholder="请输入支持球队..." autocomplete="off"/>
+                    <input type="button" value="点击预测" style="width:80px;height:35px"/>           -->
+            </div>
+            <div class="prediction" >
+                <h3>
+                    {{ home }}
+                    {{ result }}
+                    {{ away }}
+                </h3>
+            </div>
+            <div class="article">
+                <ul>
+                <h1> <a href="{% url 'premier:edit_page' %}">新文章</a></h1>
+                 <!--    {% for article in articles %}
+                  <!--       <a href="{% url 'premier:article_page' article.id  %}">{{article.title}}</a>
+                   <!--     <br>
+                    <!-- {% endfor %}  -->
+
+                </ul>
+            </div>
+            <div class="item">
+                <ul >
+                    <li><a href="#">赛事集锦</a></li>
+                    <li><a href="#">观战指南</a></li>
+                    <li><a href="#">各方评说</a></li>
+
+                </ul>
+            </div>
+		</div>
+
+    <div id=column2>
+        <div id="container" style="width: 600px; height: 320px;">
+            <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('container'));
+
+        var option = {
+    title: {
+        text: '球队雷达图',
+        textStyle:{
+                    color:'#fff',
+                    fontWeight:'lighter'
+                }
+    },
+    textStyle:{
+        color:'#fff'
+    },
+    tooltip: {},
+    legend: {
+        data: ['{{home}}','{{away}}'],
+        textStyle:{
+            color:' #fff',
+            fontWeight:'lighter'
+        },
+        right:20
+    },
+    radar: {
+        // shape: 'circle',
+        indicator: [
+           { name: 'total_shots ', max: 20},
+           { name: 'shots_on_target', max: 20},
+           { name: 'saves', max:5},
+           { name: 'corners', max: 20},
+           { name: 'crosses', max: 20},
+           { name: 'fouls', max: 20}
+        ]
+    },
+    series: [{
+        name: '预算 vs 开销（Budget vs spending）',
+        type: 'radar',
+        // areaStyle: {normal: {}},
+        data : [
+            {
+                value : [{{ avg_train.total_shots_home_team }}, {{ avg_train.shots_on_target_home_team}}, {{ avg_train.saves_home_team}}, {{ avg_train.corners_home_team}}, {{ avg_train.crosses_home_team }} , {{ avg_train.fouls_home_team}}],
+                name :'{{home}}'
+            },
+             {
+                value : [{{ avg_train.total_shots_away_team }}, {{ avg_train.shots_on_target_away_team}}, {{ avg_train.saves_away_team}}, {{ avg_train.corners_away_team}}, {{ avg_train.crosses_away_team }},{{ avg_train.fouls_away_team}}],
+                name : '{{ away }}'
+            }
+        ]
+    }]
+};
+        myChart.setOption(option);
+    </script>
+        </div>
+
+        <div id="zhizhu" style="width: 600px; height: 300px;">
+         <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('zhizhu'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '柱状图指标展示',
+                textStyle:{
+                    color:'#fff',
+                    fontWeight:'lighter'
+                }
+            },
+            textStyle:{
+                color:'#fff'
+            },
+            tooltip: {},
+            legend: {
+                data:['主队指标次数'],
+                textStyle:{
+                color:' #fff',
+                fontWeight:'lighter'
+                            },
+                right:20
+            },
+            xAxis: {
+                data: [
+                    '射门总数','命中目标','扑救','角球','传中',' 犯规'
+                ]
+            },
+            yAxis: {},
+            series: [{
+                name: '主队指标次数',
+                type: 'bar',
+                data: [{{ avg_train.total_shots_home_team }}, {{ avg_train.shots_on_target_home_team}}, {{ avg_train.saves_home_team}}, {{ avg_train.corners_home_team}}, {{ avg_train.crosses_home_team }} , {{ avg_train.fouls_home_team}}],
+                barWidth: '40%'
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+        </div>
+		</div>
+</div>
+
+
+</body>
+</html>

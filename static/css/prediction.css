@@ -1,0 +1,102 @@
+body{
+    padding: 0 0 0 0;
+    background-color: #ffffff;
+    background-image: url(../images/ouguan.jpg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#total
+{
+    float:left;
+    width:1400px;
+    height:750px;
+    margin:0 auto;
+    text-align: center;
+}
+#column1
+{
+    margin: 5px;
+    float:left;
+    width:48%;
+    height:700px;
+    border-style:dashed;
+}
+.search1{
+    margin: 20px;
+	float:left;
+    border-style:dashed;
+}
+
+.submit{
+    width:100px;
+    height:80px;
+    border:0;
+    margin: 10px;
+}
+
+.header{
+    text-align: left;
+    margin-top: 5px;
+    border-style:dashed;
+}
+
+.search{
+    text-align: center;
+    margin-top: 20px;
+    border-style:dashed;
+}
+
+.prediction{
+    text-align: center;
+    margin-top: 20px;
+    border-style: dashed;
+    font-size: larger;
+    color: white;
+}
+
+.article{
+    text-align: center;
+    margin-top: 20px;
+    border-style: dashed;
+    color: white;
+}
+
+.item{
+    text-align: center;
+    margin-top: 20px;
+    border-style:dashed;
+    color: white;
+}
+
+
+.search2{
+     margin: 20px;
+	 float:left;
+    border-style:dashed;
+}
+
+#column2
+{
+    margin: 5px;
+	float:left;
+    width: 49%;
+    height:700px;
+}
+
+#container{
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 60px;
+
+}
+
+#zhizhu{
+    text-align: center;
+    margin-top:70px;
+    margin-left:60px;
+}
+
+
