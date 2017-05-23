@@ -17,6 +17,6 @@ from django.conf.urls import url,include
 from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^premier/',include('premier_league.urls',namespace='premier')),
+    url(r'^',include('premier_league.urls',namespace='premier')),
 
 ]
